@@ -1,0 +1,75 @@
+:root {
+    --grisOscuro: rgb(61, 61, 61);
+    --negroClaro: rgb(29, 29, 29);
+    --naranjaOscuro: rgb(207, 131, 69);
+    --naranjaClaro: rgb(255, 173, 106);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+body {
+    min-height: 300px;
+    background-color: var(--grisOscuro);
+    display: grid;
+    place-items: center;
+}
+
+.calculadora {
+    background-color: grey;
+    color: aliceblue;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 600px;
+    height: 600px;
+    max-width: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    gap: 0.5rem;
+}
+
+.pantalla {
+    /*Va hasta la ultimo columna*/
+    overflow: hidden;
+    grid-column: 1 / -1;
+    background-color: var(--negroClaro);
+    text-align: right;
+    padding: 2rem;
+    font-size: 2.5rem;
+}
+
+.boton {
+    color: white;
+    border-radius: 15px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 1.2rem;
+}
+
+.boton:hover {
+    background-color: var(--negroClaro);
+}
+
+#cero {
+    /*Ocupa dos columnas*/
+    grid-column: span 2;
+}
+
+#igual {
+    /*Ocupa dos filas */
+    grid-row: span 2;
+    background-color: var(--naranjaOscuro);
+}
+
+#igual:hover {
+    background-color: var(--naranjaClaro);
+}
